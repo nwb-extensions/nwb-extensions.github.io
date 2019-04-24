@@ -39,16 +39,22 @@ For public releases NWB:N does not allow custom extensions to the semantic versi
 2. A version number MUST take the form X.Y.Z. X, Y, and Z MUST be non-negative integers. X, Y, and Z MUST NOT contain leading zeroes. X identifies the major version, Y identifies the minor version, and Z identifies the patch version. Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
 3. Any modifications to a specification MUST be released as a new version. That is, once a specific version of a specification has been released, the contents of that version MUST NOT be modified
 4. Initial version numbers SHOULD be created as follows:
+
    1. For initial development, version numbers with a MAJOR version zero (i.e., 0.y.z) SHOULD be used indicating that anything may change at any time and that the extensions SHOULD not be considered stable.
    2. Version 1.0.0 defines the public API. Incrementation of version numbers thereafter MUST follow the semantic versioning rules outlined here.
+
 5. Version numbers MUST be incremented as follows:
+
    1. PATCH version Z (x.y.Z | x > 0) MUST be incremented if only backwards compatible bug fixes  or other changes that do not affect the actual specification (e.g., correction of documentation etc.) are introduced. Bug fix defines as an internal change that does not affect the actual data format specification. The PATCH version MUST be reset to 0 when the MAJOR or MINOR version is incremented.
    2. MINOR version Y (x.Y.z | x > 0) MUST be incremented if new, backwards compatible functionality is introduced to the public specification. It MUST be incremented if any public API functionality is marked as deprecated and if new functionality or improvements are introduced. It MAY include patch level changes. The PATCH version MUST be reset to 0 when MINOR version is incremented. The MINOR version MUST be reset to 0 when the MAJOR version is incremented.
    3. MAJOR version X (X.y.z | X > 0) MUST be incremented if any backwards incompatible changes are introduced to the public format specification. It MAY include minor and patch level changes. The PATCH and MINOR version MUST be reset to 0 when major version is incremented.
+
 6. Public releases format specification MUST NOT contain custom extensions to the semantic versioning. Custom extensions (e.g., beta, rc) MAY be used internally on development branches but MUST be removed for full public release. For internal releases addition of lowercase alphabetic identifiers (a-z) SHOULD be used. Internal release additions SHOULD be comparable via standard alphabet ordering (e.g,. 1.0.0a < 1.0.0b). Typically, not the full spectrum of available alphabet characters are used for internal pre-releases, e.g., in the case of the following SUGGESTED internal versioning scheme:
+
    1. The postfix **a** (e.g., 2.0.1a) may be used to indicate internal alpha releases. Internal alpha releases are considered not stable and under development.
    2. The postfix **b** (e.g., 2.0.1b) may be used to indicate internal beta releases. Internal beta releases are considered usable but still under development.
    3. The postfix **rc** (e.g., 2.0.1rc) may be used to indicate internal release candidates. Internal release candidate are considered usable and stable, expecting only minor changes for full public release.
+
 7. To support versioning of subcomponents of an extension, an extension MAY contain sub-namespaces that are included in the main extension namespace. Sub-namespaces MUST follow the same versioning rules outlined above. In addition the version of the main namespace (and any sub-namespaces that include a corresponding sub-namespace) MUST update their version numbers accordingly when the version of a sub-namespace is incremented.
 
 ## Determining version precedence
