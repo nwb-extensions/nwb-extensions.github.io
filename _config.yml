@@ -1,0 +1,21 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Neuro Data Extensions (NDX) Catalog
+email: oruebel@lbl.gov
+description: > # this means to ignore newlines until "baseurl:"
+  Web page for technical content for HDMF
+exclude: ["README.md", "Gemfile" ]
+url: ""
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+
