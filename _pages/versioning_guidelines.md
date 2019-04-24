@@ -3,7 +3,7 @@ title: "Versioning NDX"
 layout: default
 excerpt: "Versioning NDX"
 sitemap: false
-permalink: /guidelines/versioning
+permalink: /versioning_guidelines
 ---
 
 # Versioning NWB:N Specification Namespaces
