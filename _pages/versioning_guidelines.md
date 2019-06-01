@@ -19,7 +19,7 @@ The purpose of this document is to define the requirements and strategy for vers
 
 ### Definitions
 
-* The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.
+* The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 * **“Neurodata Extensions” (NDX)** refer to extensions to he NWB:N data standard. NDX MUST be described by a formal format specification using the NWB:N specification language.
 * **“Namespace”** is a declarative region for format extensions that provides a scope to the identifiers (the neurodata_types, groups, datasets, links, attributes etc.) inside it. Namespaces are used to organize format specifications into logical groups and to prevent name collisions that can occur especially when using multiple extensions to the core data specification.
 * **“Sub-namespace”** refers to a namespace that is being used exclusively as a sub-component of an extension “Namespace.” I.e., sub-namespaces are always included in the main namespace and released in conjunction with the main namespace. Sub-namespaces can be useful if separate versioning of sub-components of a namespace is desirable. Generally we RECOMMEND to organize extensions into a single “Namespace” with possible multiple extension source yaml files, rather than using “Sub-namespaces”
