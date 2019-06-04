@@ -49,7 +49,7 @@ The [ndx-template](https://github.com/nwb-extensions/ndx-template) provides a st
 
 #### 2.1.2 [staged-extensions](https://github.com/nwb-extensions/staged-extensions): Creating custom ndx recipes
 
-The [staged-extensions](https://github.com/nwb-extensions/staged-extensions) repository is a place to submit NWB:N extension recipes before they become fully fledged NWB extensions.
+The [staged-extensions](https://github.com/nwb-extensions/staged-extensions) repository is a place to submit new NWB:N extension recipes, i.e., before a ndx-custom-recipe repo exists for the extension.
 
 #### 2.2.3 ndx-custom-recipe: Custom extension catalog recipe
 
