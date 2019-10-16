@@ -1,13 +1,14 @@
 ---
 title: "NDX Catalog"
 layout: default
+excerpt: "NDX Catalog"
 sitemap: false
 permalink: /extensions
 ---
 
 ## Explore the Neurodata Extensions Catalog
 
-<form action="{{ site.url }}/extensions/" method="get">
+<form action="{{ site.url }}/extensions" method="get">
     Filter: <input type="search" name="q" id="search-input" size="70" autofocus>
     <input type="submit" value="Search" style="display: none;">
 </form>
