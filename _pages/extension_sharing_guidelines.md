@@ -7,13 +7,13 @@ permalink: /ndx_sharing_guidelines
 ---
 
 # Guidelines for sharing NWB:N extensions (NDX)
-* Version: 0.2.0 (DRAFT)
+* Version: 0.3.0 (DRAFT)
 * Authors:
    * Oliver Ruebel
    * Andrew Tritt
    * Benjamin Dichter
    * Ryan Ly
-* Last update: March 29, 2019
+* Last update: October 16, 2019
 
 
 ## Overview
@@ -27,7 +27,7 @@ The purpose of this document is to define the requirements and strategy for shar
 * **“Public NDX”** refer to extensions intended for use by the public (or specific larger community).
 * **“NDX Catalog”** refers to the public catalog for NDX. The NDX Catalog is implemented via a dedicated public GitHub organization at [https://github.com/nwb-extensions](https://github.com/nwb-extensions).
 * **“ndx-src”** repository refers to the (typically user-owned) code repository used to manage the sources of the extension.
-* **“ndx-recipe”** repository refers to the Git repository as part of the NDX catalog used to register the extension with the catalog (this includes basic metadata about the NDX and information needed for install and deployment).
+* **“ndx-record”** repository refers to the Git repository as part of the NDX catalog used to register the extension with the catalog (this includes basic metadata about the NDX and information needed for install and deployment).
 
 ## Requirements for sharing extensions
 Public NDX MUST follow the rules outlined below in order to be considered compliant. Internal NDX are also highly  RECOMMENDED to follow the same rules outlined below as much as possible.
@@ -46,19 +46,19 @@ Public NDX MUST follow the rules outlined below in order to be considered compli
    1. OPTIONAL custom Matlab plugins for MatNWB for representing neurodata_types.
 1. Performing releases:
    1. To ensure compliance with the semantic versioning rules, public NDX MUST be released in a persistent fashion (i.e., sources of a particular version MUST not be modified after release and MUST remain accessible).
-   1. Public NDX MUST register with the NWB:N extensions catalog. To register with the catalog, a public NDX MUST create a ndx-recipe Git repository as part of the NWB:N extension GitHub organization. An ndx-recipe repo contains the descriptions needed for the catalog and deployment, i.e. the sources of the extension MAY be hosted in a different public ndx-src repository.
-   1. Public ndx-src repositories SHOULD use Git tags to ensure compliance with (4i) and NDX SHOULD follow sharing strategies outlined in the NDX Catalogs guidelines and strategies for sharing extensions. Note, software versions managed via Git tags may differ from the version of the extensions namespace. However, both MUST follow semantic versioning rules.
+   1. Public NDX MUST register with the NWB:N extensions catalog. To register with the catalog, a public NDX MUST create a ndx-record Git repository as part of the NWB:N extension GitHub organization. An ndx-record repo contains the descriptions needed for the catalog and deployment, i.e. the sources of the extension MAY be hosted in a different public ndx-src repository.
+   1. Public ndx-src repositories SHOULD use Git tags to ensure compliance with (4i) and NDX SHOULD follow sharing strategies outlined in the NDX Catalog's guidelines and strategies for sharing extensions. Note, software versions managed via Git tags may differ from the version of the extensions namespace. However, both MUST follow semantic versioning rules.
 1. Naming namespaces and repositories:
    1. The **name key** of the namespace for the extension SHOULD generally follow the following naming conventions:
-      1. Use the naming schema “ndx_myname”, e.g., “ndx_cortical_surface”
+      1. Use the naming schema “ndx-myname”, e.g., “ndx-cortical-surface”
       1. Use short and descriptive names
       1. Use only lower-case ASCII letters (no special characters)
-      1. Use “_” to separate different parts of the name (no spaces allowed)
-   1. The **namespace YAML file** with the specification of the namespace SHOULD have the same name as the name key of the main namespace. Here the ndx prefix MAY be ommitted and the ``namespace.yaml`` SHOULD be added. E.g., if the name of the namespace is "ndx_cortical_surface", then the YAML file would be called "cortical_surface.namespace.yaml".
-   1. The **ndx-recipe repository** as part of the NDX Catalog MUST have the same name as the name key of the main namespace of the NDX i.e., “ndx_myname”)(e.g., “ndx_cortical_surface”). This strategy helps ensure that there are no name conflicts between public NDX namespace names.
+      1. Use “-” to separate different parts of the name (no spaces allowed)
+   1. The **namespace YAML file** with the specification of the namespace SHOULD have the same name as the name key of the main namespace. Here the ndx prefix MAY be ommitted and the ``namespace.yaml`` SHOULD be added. E.g., if the name of the namespace is "ndx-cortical-surface", then the YAML file would be called "ndx-cortical-surface.namespace.yaml".
+   1. The **ndx-record repository** as part of the NDX Catalog MUST have the same name as the name key of the main namespace of the NDX i.e., “ndx-myname”)(e.g., “ndx-cortical-surface”). This strategy helps ensure that there are no name conflicts between public NDX namespace names.
    1. The **ndx-src repository** of an extension SHOULD generally follow the following conventions:
-       1. Have the same name as the name key of the main namespace of the NDX (i.e., “ndx_myname”)(e.g., “ndx_cortical_surface”)
+       1. Have the same name as the name key of the main namespace of the NDX (i.e., “ndx-myname”)(e.g., “ndx-cortical-surface”)
        1. Use GitHub (preferred) (or other public Git hosting service)
        1. Include a description and URL
        1. Specify at least the following GitHub topics: ndx-extension
-   1. The python package for the NDX SHOULD have the same name as the name key of the main namespace of the NDX (i.e., “ndx_myname”)(e.g., ``from ndx_cortical_surface import CorticalSurface``)
+   1. The python package for the NDX SHOULD have the same name as the name key of the main namespace of the NDX, where hyphens are replaced with underscores (i.e., “ndx_myname”)(e.g., ``from ndx_cortical_surface import CorticalSurface``)
