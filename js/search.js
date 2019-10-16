@@ -102,7 +102,7 @@ excluded_in_search: true
           searchProcessEl.style.display = "none";
           showAllEl.style.display = "inline";
           showAllCountEl.innerHTML = count.toString();
-        } else if (results.length) {  // there are search results
+        } else {  // there are search results
             var resultsHTML = "";
             results.forEach(function (result) {
                 var item = window.data[result.ref];
