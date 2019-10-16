@@ -34,11 +34,11 @@ Public NDX MUST follow the rules outlined below in order to be considered compli
 
 1. Releases of extensions MUST minimally include:
    1. The complete YAML(JSON)  source and namespace files for the NDX, which MUST be compliant with the NWB:N specification language. In addition to “name”, and “schema”,  the namespace specification further MUST include the “author”, “contact”, and “version” of the namespace. The version number MUST follow the <a href="{{ site.url }}{{ site.baseurl }}/versioning_guidelines">NWB:N semantic versioning rules</a>.
-   1. LICENSE file detailing the licence for the NDX. Permissive licenses SHOULD be used if possible. BSD licence is RECOMMENDED. In particular for release via the NDX Catalog (see Sec. 4ii), the licence MUST include language giving permission to members of the GitHub organization to distribute the extensions.
+   1. LICENSE file detailing the license for the NDX. Permissive licenses SHOULD be used if possible. BSD license is RECOMMENDED. In particular for release via the NDX Catalog (see Sec. 4ii), the license MUST include language giving permission to members of the GitHub organization to distribute the extensions.
    1. Release notes detailing the changes between extension versions. Release notes MAY be included in the detailed RST documentation or as a separate RELEASENOTES.md/rst file.
    1. Requirements file detailing dependencies on other NDX and where they can be installed from. This is required as the namespace.yaml only includes the names of namespaces that are being included.
 1. Releases of extensions SHOULD further include:
-   1. Source for generating the YAML specfication using the PyNWB/HDMF extensions APIs. By sharing the sources eases maintenance, testing, and reuse of the NDX.
+   1. Source for generating the YAML specification using the PyNWB/HDMF extensions APIs. By sharing the sources eases maintenance, testing, and reuse of the NDX.
    1. Additional documentation in Sphinx RST format describing the NDX, credits, legal, and acknowledgements.
    1. README file with additional details about the NDX.
 1. Releases of NDX MAY further include:
@@ -54,7 +54,7 @@ Public NDX MUST follow the rules outlined below in order to be considered compli
       1. Use short and descriptive names
       1. Use only lower-case ASCII letters (no special characters)
       1. Use “-” to separate different parts of the name (no spaces allowed)
-   1. The **namespace YAML file** with the specification of the namespace SHOULD have the same name as the name key of the main namespace. Here the ndx prefix MAY be ommitted and the ``namespace.yaml`` SHOULD be added. E.g., if the name of the namespace is "ndx-cortical-surface", then the YAML file would be called "ndx-cortical-surface.namespace.yaml".
+   1. The **namespace YAML file** with the specification of the namespace SHOULD have the same name as the name key of the main namespace. Here the ndx prefix MAY be omitted and the ``namespace.yaml`` SHOULD be added. E.g., if the name of the namespace is "ndx-cortical-surface", then the YAML file would be called "ndx-cortical-surface.namespace.yaml".
    1. The **ndx-record repository** as part of the NDX Catalog MUST have the same name as the name key of the main namespace of the NDX i.e., “ndx-myname”)(e.g., “ndx-cortical-surface”). This strategy helps ensure that there are no name conflicts between public NDX namespace names.
    1. The **ndx-src repository** of an extension SHOULD generally follow the following conventions:
        1. Have the same name as the name key of the main namespace of the NDX (i.e., “ndx-myname”)(e.g., “ndx-cortical-surface”)
