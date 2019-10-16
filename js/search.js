@@ -71,11 +71,11 @@ excluded_in_search: true
         maintainers = '';
       }
       resultHtml = "<li class='record'>" +
-        "<h4><span class='ndx-name'><a href='{{ site.domain }}" + item.record_url + "'>" + item.name + "</a></span></h4>" +
+        "<h4><span class='ndx-name'><a href='" + item.src + "'>" + item.name + "</a></span></h4>" +
         "<p>" +
         "<span class='ndx-stats'>Version: " + item.version + "</span>" +
         "<span class='ndx-stats'><a href=\"" + item.pip + "\">PyPI project page</a></span>" +
-        "<span class='ndx-stats'><a href=\"" + item.src + "\">Source code</a></span>" +
+        "<span class='ndx-stats'><a href=\"" + item.record_url + "\">Record repo</a></span>" +
         "<span class='ndx-stats'>License: " + item.license + "</span>" +
         "</p>" +
         "<p>Maintainers: " + maintainers + "</p>" +
