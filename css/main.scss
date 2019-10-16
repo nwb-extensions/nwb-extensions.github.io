@@ -179,3 +179,32 @@ table {
   border-collapse: separate;
   border-spacing: 10px 0;
 }
+
+/* Catalog search */
+
+#search-input {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#search-results {
+  padding: 0;
+}
+
+.record {
+  display: block;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 10px 0;
+}
+
+.record .ndx-name {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.record .ndx-stats {
+  margin-right: 25px;
+}

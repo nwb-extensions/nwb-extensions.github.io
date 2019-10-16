@@ -16,9 +16,9 @@ permalink: /extensions
 <p><span id="search-process" style="display: none">Showing <span id="search-results-count"></span> results for "<strong id="search-query"></strong>"</span><span id="show-all" style="display: none">Showing <span id="show-all-count"></span> extensions</span></p>
 <ul id="search-results"></ul>
 
-<script src="{{ site.baseurl }}/js/lunr.min.js"></script>
-<script src="{{ site.baseurl }}/js/jquery-3.4.1.min.js" ></script>
-<script src="{{ site.baseurl }}/js/js-yaml.min.js" ></script>
+<script src="{{ site.url }}/js/lunr.min.js"></script>
+<script src="{{ site.url }}/js/jquery-3.4.1.min.js" ></script>
+<script src="{{ site.url }}/js/js-yaml.min.js" ></script>
 
 <script>
 (function() {
