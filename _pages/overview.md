@@ -7,12 +7,6 @@ permalink: /overview
 ---
 
 
-# Neuro Data Extensions Catalog
+# Neurodata Extensions Catalog
 
-<img alt="NDX Catalog Logo" src="images/nwb-extensions-catalog-logo2.png" width="400" class="center-block">
-
-
-
-
-
-
+<img alt="NDX Catalog Logo" src="images/ndx-logo-text.png" width="400" class="center-block">

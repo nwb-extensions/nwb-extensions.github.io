@@ -6,8 +6,8 @@ sitemap: false
 permalink: /
 ---
 
-<img alt="NDX Catalog Logo" src="images/nwb-extensions-catalog-logo2.png" width="400" class="center-block">
+<img alt="NDX Catalog Logo" src="images/ndx-logo-text.png" width="400" class="center-block">
 
-**!!!The NDX Catalog is under development and not yet available for public use!!!**
+**!!! The NDX Catalog is under development and not yet available for public use !!!**
 
-The [Neurodata Without Borders Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensions) is a community-led catalog of recipes for distribution of Neuro Data Extensions (NDXs) to the [Neurodata Without Borders: Neurophysiology (NWB:N)](https://neurodatawithoutborders.github.io/) data standard.
+The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensions) is a community-led catalog of extensions to the [Neurodata Without Borders: Neurophysiology (NWB:N)](https://neurodatawithoutborders.github.io/) data standard.
