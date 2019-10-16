@@ -7,7 +7,7 @@ permalink: /extensions
 
 ## Explore the Neurodata Extensions Catalog
 
-<form action="{{ site.baseurl }}/" method="get">
+<form action="{{ site.url }}/extensions/" method="get">
     Filter: <input type="search" name="q" id="search-input" size="70" autofocus>
     <input type="submit" value="Search" style="display: none;">
 </form>
