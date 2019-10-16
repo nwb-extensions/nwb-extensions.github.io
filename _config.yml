@@ -19,3 +19,10 @@ include:
 sass:
   sass_dir: _sass
 
+# Prefix: The repo prefix to include in your subset
+prefix: ndx-
+suffix: -record
+
+domain: "https://nwb-extensions.github.io"
+baseurl: ""
+github_username: nwb-extensions
