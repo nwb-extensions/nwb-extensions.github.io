@@ -1,9 +1,9 @@
 ---
-title: "NDX Sharing Guidelines"
+title: "Sharing Guidelines"
 layout: default
-excerpt: "NDX Sharing Guidelines"
+excerpt: "Sharing Guidelines"
 sitemap: false
-permalink: /ndx_sharing_guidelines
+permalink: /sharing_guidelines
 ---
 
 # Guidelines for sharing NWB:N extensions (NDX)
