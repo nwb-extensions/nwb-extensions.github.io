@@ -2,7 +2,7 @@
 title: "NDX Catalog Search"
 layout: default
 sitemap: false
-permalink: /
+permalink: /extensions
 ---
 
 ## Explore the Neurodata Extensions Catalog
