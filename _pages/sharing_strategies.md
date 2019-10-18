@@ -26,7 +26,7 @@ The purpose of this document is to define standard practices and strategies for 
 * **“Neurodata Extensions” (NDX)** refers to extensions to the NWB data standard. An NDX MUST be described by a formal format specification using the NWB specification language.
 * **“Internal NDX”** refers to extensions used within a particular lab, organization, or project that are not intended for use outside of that group or context.
 * **“Public NDX”** refers to extensions intended for use by the public (or specific larger community).
-* **“nwb-extensions”** refers to the public catalog for NDX. The nwb-extensions catalog is implemented via a dedicated public GitHub organization at [https://github.com/nwb-extensions](https://github.com/nwb-extensions) and website [https://nwb-extensions.github.io/](https://nwb-extensions.github.io/).
+* **“NDX Catalog”** refers to the public catalog for NDX. The nwb-extensions catalog is implemented via a dedicated public GitHub organization at [https://github.com/nwb-extensions](https://github.com/nwb-extensions) and website [https://nwb-extensions.github.io/](https://nwb-extensions.github.io/).
 * **“ndx-template”** refers to the repository containing a template for creating an extension from scratch.
 * **“ndx-custom”** refers to a specific user extension repository that has usually been created from the ndx-template and is used to manage the sources of the extension. This repository lives in the user's own Git space and is NOT part of the nwb-extensions organization.
 * **“staged-extensions”** repository refers to the GitHub repository that holds extension records awaiting review for registration of the extension with the catalog. It also contains a template for creating an extension record.
@@ -109,11 +109,11 @@ The figure below illustrates the process for (1) creating a new extensions, (2) 
 
 This can be separated into CI for three main repositories:
 
-1. the staged-extensions repository as part of the nwb-extensions catalog,
-1. the ndx-custom-record repo as part of the nwb-extensions catalog, and
+1. the staged-extensions repository as part of the NDX Catalog,
+1. the ndx-custom-record repo as part of the NDX Catalog, and
 1. the user's ndx-custom repository.
 
-Parts 1 and 2 are part of the nwb-extensions catalog and are maintained by the NWB development team. Part 3 will need to be setup and maintained by the extension developers. The ndx-template can provide templates for defining CI for ndx-custom repositories, but ultimately this will be up to the extension developers to do.
+Parts 1 and 2 are part of the NDX Catalog and are maintained by the NWB development team. Part 3 will need to be setup and maintained by the extension developers. The ndx-template can provide templates for defining CI for ndx-custom repositories, but ultimately this will be up to the extension developers to do.
 
 #### 3.1.1 staged-extensions CI
 
