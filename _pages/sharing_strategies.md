@@ -103,7 +103,7 @@ Extensions SHOULD be created using the PyNWB specification API to improve mainta
 
 The figure below illustrates the process for (1) creating a new extensions, (2) creating a record to register an extension with the extension catalog, and (3) to update an extension/record. The figure also illustrates the automated CI processes that are managed in the [nwb-extensions](https://github.com/nwb-extensions) catalog. The catalog process is modeled after the conda-forge model, enabling us to largely automate the catalog process using free, public services and avoid the need to host our own services.
 
-<img alt="NDX Catalog Logo" src="images/nwbn_extension_catalog_workflow.png" width="800" class="center-block">
+<img alt="NDX Catalog Workflow" src="images/nwbn_extension_catalog_workflow.png" width="800" class="center-block">
 
 ### 3.1 Continuous Integration (CI) for Extensions
 
