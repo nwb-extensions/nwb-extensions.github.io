@@ -22,7 +22,7 @@ The purpose of this document is to define the requirements and strategy for shar
 ### Definitions
 
 * The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
-* **“Neurodata Extensions” (NDX)** refer to extensions to he NWB data standard. NDX MUST be described by a formal format specification using the NWB specification language.
+* **“Neurodata Extensions” (NDX)** refer to extensions to the NWB data standard. NDX MUST be described by a formal format specification using the NWB specification language.
 * **“Internal NDX”** refer to extensions used within a particular lab, organization, or project that are not intended for use outside of that group or context.
 * **“Public NDX”** refer to extensions intended for use by the public (or specific larger community).
 * **“NDX Catalog”** refers to the public catalog for NDX. The NDX Catalog is implemented via a dedicated public GitHub organization at [https://github.com/nwb-extensions](https://github.com/nwb-extensions) and website [https://nwb-extensions.github.io/](https://nwb-extensions.github.io/).
