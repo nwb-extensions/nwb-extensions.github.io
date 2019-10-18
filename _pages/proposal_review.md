@@ -36,19 +36,22 @@ of the NWB data format.
 * **“NWB Executive Board”** (EB) is a group of scientists that supervises and coordinates NWB-related efforts, including development of NWB-related policies, funding, community outreach, and input for major technical decisions to the Technical Advisory Board.
 
 ## Lifecycle of extensions
+
 Data standards are not static but evolve to adapt to changing requirements, clarify ambiguities, and fix bugs among others. The typical life-cycle of format extensions is outlined below.
 <img alt="NDX Lifecycle" src="images/nwbn_extension_lifecycle.png" width="800" class="center-block">
 
 ## Main stakeholders of NWB extensions and their roles in the extension lifecycle
+
 During active use of an extension, the main stakeholders of the extension include the developers of the extension, the NWB core development team, and the end-users using the extension. Review of extensions for acceptance to the NWB core data standard are led by the NWB Technical Advisory Board (TAB), the NWB Executive Board (EB), and the community review working group with comments, requests for changes, and updates provided by the other stakeholders (i.e., the extension developers, users, and the core developer team).
 <img alt="NDX Stakeholders" src="images/nwbn_extension_stakeholders.png" width="800" class="center-block">
 
 ## Phases of the review of extensions
+
 To guide and clearly communicate progress in the review and acceptance process, we use a multi-phased process for acceptance. As “Lab Extensions” have not entered the review process yet, they MAY either be internal or public NDX. NDX in review (i.e., NDX in any other phase than lab extension) MUST be public NDX.
 <img alt="NDX Review Phases" src="images/nwbn_extension_review_phases.png" width="800" class="center-block">
 
+## Process for creation, review and acceptance of extensions
 
-## Process for creation, review and acceptance of extension
 <img alt="NDX Review Flowchart" src="images/nwbn_extension_review_process.png" width="800" class="center-block">
 
 The flow-chart above illustrates the main process for creation, review, and acceptance of extensions as part of the NWB core data standard. The process begins with a development team creating a new extension. During initial development, this will often be an internal NDX. Once a working draft of the extension exists, the team will submit the extension to the NDX Catalog by creating a pull request on the staged-extensions repository. The NWB core development team tests compliance of the extension with NWB standards (typically via automated tests). Once accepted to the NDX Catalog, the extension becomes a public NDX with “Lab Extension” status.
