@@ -6,7 +6,7 @@ sitemap: false
 permalink: /sharing_guidelines
 ---
 
-# Guidelines for sharing NWB:N extensions (NDX)
+# Guidelines for sharing NWB extensions (NDX)
 * Version: 0.3.0 (DRAFT)
 * Authors:
    * Oliver Ruebel
@@ -17,12 +17,12 @@ permalink: /sharing_guidelines
 
 
 ## Overview
-The purpose of this document is to define the requirements and strategy for sharing format extensions for NWB:N, so called Neurodata Extensions (NDX).
+The purpose of this document is to define the requirements and strategy for sharing format extensions for NWB, so called Neurodata Extensions (NDX).
 
 ### Definitions
 
 * The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
-* **“Neurodata Extensions” (NDX)** refer to extensions to he NWB:N data standard. NDX MUST be described by a formal format specification using the NWB:N specification language.
+* **“Neurodata Extensions” (NDX)** refer to extensions to he NWB data standard. NDX MUST be described by a formal format specification using the NWB specification language.
 * **“Internal NDX”** refer to extensions used within a particular lab, organization, or project that are not intended for use outside of that group or context.
 * **“Public NDX”** refer to extensions intended for use by the public (or specific larger community).
 * **“NDX Catalog”** refers to the public catalog for NDX. The NDX Catalog is implemented via a dedicated public GitHub organization at [https://github.com/nwb-extensions](https://github.com/nwb-extensions) and website [https://nwb-extensions.github.io/](https://nwb-extensions.github.io/).
@@ -33,7 +33,7 @@ The purpose of this document is to define the requirements and strategy for shar
 A Public NDX MUST follow the rules outlined below in order to be considered compliant. Internal NDX are also highly RECOMMENDED to follow the same rules outlined below as much as possible.
 
 1. Releases of extensions MUST minimally include:
-   1. The complete YAML source and namespace files for the NDX, which MUST be compliant with the NWB:N specification language. In addition to “name”, and “schema”, the namespace specification further MUST include the “author”, “contact”, and “version” of the namespace. The version number MUST follow the <a href="{{ site.url }}{{ site.baseurl }}/versioning_guidelines">NWB:N semantic versioning rules</a>.
+   1. The complete YAML source and namespace files for the NDX, which MUST be compliant with the NWB specification language. In addition to “name”, and “schema”, the namespace specification further MUST include the “author”, “contact”, and “version” of the namespace. The version number MUST follow the <a href="{{ site.url }}{{ site.baseurl }}/versioning_guidelines">NWB semantic versioning rules</a>.
    1. LICENSE file detailing the license for the NDX. Permissive licenses SHOULD be used if possible. BSD license is RECOMMENDED. In particular for release via the NDX Catalog (see Sec. 4ii), the license MUST include language giving permission to members of the GitHub organization to distribute the extensions.
    1. Release notes detailing the changes between extension versions. Release notes MAY be included in the detailed RST documentation or as a separate RELEASENOTES.md (or .rst) file.
    1. Requirements file detailing dependencies on other NDX and where they can be installed from. This is required as the namespace.yaml only includes the names of namespaces that are being included.
@@ -48,7 +48,7 @@ A Public NDX MUST follow the rules outlined below in order to be considered comp
 1. Performing releases:
    1. To ensure compliance with the semantic versioning rules, public NDX MUST be released in a persistent fashion (i.e., sources of a particular version MUST not be modified after release and MUST remain accessible).
    1. Public NDX MUST register with the NDX Catalog. To register with the catalog, a public NDX MUST create an ndx-custom-record Git repository as part of the [nwb-extensions GitHub organization](https://github.com/nwb-extensions). An ndx-custom-record repo contains basic metadata about the NDX and information needed for install and deployment. The sources of the extension MAY be hosted in a different public ndx-custom repository.
-   1. Public ndx-custom repositories SHOULD use Git tags to ensure compliance with (4i) and NDX SHOULD follow the NDX Catalog's <a href="{{ site.url }}{{ site.baseurl }}/sharing_strategies">sharing strategies</a>. Note: software versions managed via Git tags MAY differ from the version of the extensions namespace. However, both MUST follow semantic versioning rules.
+   1. Public ndx-custom repositories SHOULD use Git tags to ensure compliance with (4i) and NDX SHOULD follow the NDX Catalog's <a href="{{ site.url }}{{ site.baseurl }}/sharing_strategies">sharing strategies</a>. Note: software versions managed via Git tags MAY differ from the version of the extensions namespace. However, both MUST follow <a href="{{ site.url }}{{ site.baseurl }}/versioning_guidelines">NWB semantic versioning rules</a>.
 1. Naming namespaces and repositories:
    1. The **name key** of the namespace for the extension SHOULD generally follow the following naming conventions:
       1. Start with the prefix “ndx-”, e.g., “ndx-cortical-surface” (required for registration with the NDX Catalog)
