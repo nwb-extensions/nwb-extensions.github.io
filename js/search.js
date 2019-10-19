@@ -131,5 +131,5 @@ excluded_in_search: true
     var searchQueryEl = document.getElementById("search-query");
     searchQueryEl.innerText = query;
 
-    displaySearchResults(window.index.search(query), query); // Hand the results off to be displayed
+    displaySearchResults(window.index.search('*' + query + '*'), query); // Hand the results off to be displayed
 })();
