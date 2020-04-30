@@ -20,7 +20,7 @@ The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensio
 <ul id="search-results"></ul>
 
 <script src="{{ site.url }}/js/lunr.min.js"></script>
-<script src="{{ site.url }}/js/jquery-3.4.1.min.js" ></script>
+<script src="{{ site.url }}/js/jquery-3.5.0.min.js" ></script>
 <script src="{{ site.url }}/js/js-yaml.min.js" ></script>
 
 <script>
