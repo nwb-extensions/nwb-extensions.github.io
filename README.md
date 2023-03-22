@@ -1,5 +1,5 @@
 # Neuro Data Extensions Catalog
-[GitHub.io website](https://nwb-extensions.github.io) for the catalog of Neuro Data Extensions (NDX) for the Neurodata Without Borders: Neurophysiology (NWB:N) data standard.
+[GitHub.io website](https://nwb-extensions.github.io) for the catalog of Neuro Data Extensions (NDX) for the Neurodata Without Borders (NWB) data standard.
 
 ## Updating Content
 * **Submitting changes** Use GitHub pull requests to submit changes.
