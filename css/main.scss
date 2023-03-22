@@ -208,3 +208,10 @@ table {
 .record .ndx-stats {
   margin-right: 25px;
 }
+
+.readme-preview {
+  height: 300px; /* Adjust this value to your desired height */
+  overflow-y: hidden; /* change to scroll to enable scrolling */
+  position: relative;
+  padding-right: 20px;
+}

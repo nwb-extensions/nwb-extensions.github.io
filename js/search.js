@@ -64,24 +64,24 @@ excluded_in_search: true
     }
 
     function buildResultHtml(item) {
-      readmePreview = getPreview(query, item.readme, 300);
-      if (item.maintainers) {
-        maintainers = getPreview(query, item.maintainers.join(', '), 100);
-      } else {
-        maintainers = '';
+        readmeHtml = item.readme;
+        if (item.maintainers) {
+          maintainers = getPreview(query, item.maintainers.join(', '), 100);
+        } else {
+          maintainers = '';
+        }
+        resultHtml = "<li class='record'>" +
+          "<h4><span class='ndx-name'><a href='" + item.src + "'>" + item.name + "</a></span></h4>" +
+          "<p>" +
+          "<span class='ndx-stats'>Version: " + item.version + "</span>" +
+          "<span class='ndx-stats'><a href=\"" + item.pip + "\">PyPI project page</a></span>" +
+          "<span class='ndx-stats'><a href=\"" + item.record_url + "\">Record repo</a></span>" +
+          "<span class='ndx-stats'>License: " + item.license + "</span>" +
+          "</p>" +
+          "<p>Maintainers: " + maintainers + "</p>" +
+          "<div class='readme-preview'><p>" + readmeHtml + "</p></div></li>";
+        return resultHtml;
       }
-      resultHtml = "<li class='record'>" +
-        "<h4><span class='ndx-name'><a href='" + item.src + "'>" + item.name + "</a></span></h4>" +
-        "<p>" +
-        "<span class='ndx-stats'>Version: " + item.version + "</span>" +
-        "<span class='ndx-stats'><a href=\"" + item.pip + "\">PyPI project page</a></span>" +
-        "<span class='ndx-stats'><a href=\"" + item.record_url + "\">Record repo</a></span>" +
-        "<span class='ndx-stats'>License: " + item.license + "</span>" +
-        "</p>" +
-        "<p>Maintainers: " + maintainers + "</p>" +
-        "<p>" + readmePreview + "</p></li>";
-      return resultHtml;
-    }
 
     function displaySearchResults(results, query) {
         var searchResultsEl = document.getElementById("search-results");

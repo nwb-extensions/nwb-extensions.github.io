@@ -22,6 +22,7 @@ The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensio
 <script src="{{ site.url }}/js/lunr.min.js"></script>
 <script src="{{ site.url }}/js/jquery-3.5.0.min.js" ></script>
 <script src="{{ site.url }}/js/js-yaml.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
 (function() {
@@ -62,7 +63,8 @@ $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos").done(f
         $.getJSON(readmeUrl).done(function(res, status) {
           if (status == "success") {
             readmeText = atob(res.content)
-            window.data[recordJson.name].readme = readmeText
+            var readmeHtml = marked.parse(readmeText)
+            window.data[recordJson.name].readme = readmeHtml
 
             countLoaded += 1
             if (countLoaded == countTotal) {
