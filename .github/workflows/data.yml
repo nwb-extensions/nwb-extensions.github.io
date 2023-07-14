@@ -11,6 +11,7 @@ on:
 jobs:
   download:
     runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.event.head_commit.message, '[bot]') }}
     environment:
       name: download-data
     env:
@@ -35,18 +36,13 @@ jobs:
         python utils/collect-records.py
     - name: Commit & Push to repository
       run: |
-        git config --local user.name "${{ env.CI_COMMIT_USER }}"
-        git config --local user.mail "${{ env.CI_COMMIT_EMAIL }}"
-
-        git diff data
+        git config user.name "${{ env.CI_COMMIT_USER }}"
+        git config user.mail "${{ env.CI_COMMIT_EMAIL }}"
 
         if [[ `git diff data` ]] ; then
           git add data
-          echo "Data added"
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-          echo "Data committed"
           git push "${{ env.CI_PUSH_REMOTE }}" "HEAD:${{ env.CI_PUSH_BRANCH }}"
-          echo "Pushed"
         else
           echo "No changes were found in data"
           exit 0

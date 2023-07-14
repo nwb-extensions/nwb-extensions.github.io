@@ -58,8 +58,7 @@ repo_data['name'] = repo_data['ref']
 repo_data = repo_data.set_index('name').to_dict('index')
 
 
-max_records = 2 # TODO: delete when done testing
-iter_records = 0
+# max_records, iter_records = 2, 0 # this is for testing git diff
 
 # Get contents (meta & readme) of repos
 for repo_name in tqdm(list(repo_data.keys())):
@@ -79,9 +78,8 @@ for repo_name in tqdm(list(repo_data.keys())):
 
     repo_data[repo_name].update({'readme': decode_content(readme)})
 
-    iter_records += 1
-    if iter_records >= max_records:
-        break
+    # iter_records += 1 # # this is for testing git diff
+    # if iter_records >= max_records: break
 
 # Save data
 with open(OUTPUT_PATH, 'w') as f:
