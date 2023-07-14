@@ -27,7 +27,7 @@ def request(url_stem, url_leaf, tolerate=False, return_json=True):
         if return_json:
             return r.json()
         return r.content
-    
+
     if tolerate:
         return {}
     else:
@@ -58,9 +58,12 @@ repo_data['name'] = repo_data['ref']
 repo_data = repo_data.set_index('name').to_dict('index')
 
 
+max_records = 2 # TODO: delete when done testing
+iter_records = 0
+
 # Get contents (meta & readme) of repos
 for repo_name in tqdm(list(repo_data.keys())):
-    
+
     # get metadata
     meta = request('repos', f'{repo_name}/contents/ndx-meta.yaml', tolerate=True)
     if len(meta) == 0:
@@ -68,14 +71,17 @@ for repo_name in tqdm(list(repo_data.keys())):
 
     meta = yaml.safe_load(decode_content(meta))
     repo_data[repo_name].update(meta)
-    
-    # get readme    
+
+    # get readme
     readme = request('repos', f'{repo_name}/contents/README.md', tolerate=True)
     if len(readme) == 0:
         continue
-        
+
     repo_data[repo_name].update({'readme': decode_content(readme)})
 
+    iter_records += 1
+    if iter_records >= max_records:
+        break
 
 # Save data
 with open(OUTPUT_PATH, 'w') as f:

@@ -19,6 +19,7 @@ exclude:
   - "README.md"
   - "Gemfile"
   - utils
+  - .github
 
 sass:
   sass_dir: _sass
