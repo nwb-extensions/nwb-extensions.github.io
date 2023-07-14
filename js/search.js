@@ -131,5 +131,6 @@ excluded_in_search: true
     var searchQueryEl = document.getElementById("search-query");
     searchQueryEl.innerText = query;
 
-    displaySearchResults(window.index.search('*' + query + '*'), query); // Hand the results off to be displayed
+    var idx_query = (!query) ? '*' : (query + '~1'); // fuzzy match, edit distance = 1
+    displaySearchResults(window.index.search(idx_query), query); // Hand the results off to be displayed
 })();
