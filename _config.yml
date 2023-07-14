@@ -15,9 +15,6 @@ url: ""
 
 include:
   - _pages
-  - js
-  - data
-  - images
 exclude:
   - "README.md"
   - "Gemfile"

@@ -19,9 +19,9 @@ The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensio
 <p><span id="search-process" style="display: none">Showing <span id="search-results-count"></span> results for "<strong id="search-query"></strong>"</span><span id="show-all" style="display: none">Showing <span id="show-all-count"></span> extensions</span></p>
 <ul id="search-results"></ul>
 
-<script src="{{ site.url }}/js/lunr.min.js"></script>
-<script src="{{ site.url }}/js/jquery-3.5.0.min.js" ></script>
-<script src="{{ site.url }}/js/js-yaml.min.js" ></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/lunr.min.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/jquery-3.5.0.min.js" ></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/js-yaml.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
 
@@ -35,7 +35,7 @@ The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensio
     document.getElementsByTagName("head")[0].appendChild(fileref)
   }
 
-  $.getJSON('/data/records.json').done(function(data) {
+  $.getJSON('{{ site.baseurl }}/data/records.json').done(function(data) {
     Object.keys(data).forEach(key=>{
       // add DOMPurify to sanitize parsed HTML, because marked doesn't sanitize
       data[key].readme = DOMPurify.sanitize(
