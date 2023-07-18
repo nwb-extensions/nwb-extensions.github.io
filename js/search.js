@@ -131,6 +131,10 @@ excluded_in_search: true
     var searchQueryEl = document.getElementById("search-query");
     searchQueryEl.innerText = query;
 
-    var idx_query = (!query) ? '*' : (query + '~1'); // fuzzy match, edit distance = 1
-    displaySearchResults(window.index.search(idx_query), query); // Hand the results off to be displayed
+    var results = window.index.search('*' + query + '*'); // start with glob search
+    if (results.length == 0) { // use fuzzy if can't find
+        var idx_query = (!query) ? '*' : (query + '~1'); // fuzzy match, edit distance = 1
+        results = window.index.search(idx_query);
+    }
+    displaySearchResults(results, query); // Hand the results off to be displayed
 })();
