@@ -40,7 +40,8 @@ The [Neurodata Extensions Catalog (NDX Catalog)](https://github.com/nwb-extensio
       // add DOMPurify to sanitize parsed HTML, because marked doesn't sanitize
       data[key].readme = DOMPurify.sanitize(
         marked.parse(data[key].readme)
-      )
+      );
+      // data[key].pypi_version_badge = "https://img.shields.io/pypi/v/" + data[key].name;
     });
     window.data = data;
     loadSearch();
