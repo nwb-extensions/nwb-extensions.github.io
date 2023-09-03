@@ -4,6 +4,8 @@ _site
 .vagrant
 .jekyll-cache
 Gemfile.lock
+.jekyll-metadata
+.venv
 
 # general
 .DS_Store
