@@ -32,6 +32,8 @@ jobs:
     - run: |
         pip install -r utils/requirements.txt
     - name: Download records data
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # in future, consider replace with PAT
       run: |
         python utils/collect-records.py
     - name: Commit & Push to repository

@@ -1,3 +1,4 @@
+import os
 import base64
 import json
 import yaml
@@ -5,7 +6,7 @@ import yaml
 import requests
 import pandas as pd
 from tqdm import tqdm
-
+import warnings
 
 # Define consts
 API_URL = 'https://api.github.com'
@@ -13,15 +14,23 @@ GITHUB_USERNAME = 'nwb-extensions'
 REPO_PREFIX = 'ndx-'
 REPO_SUFFIX = '-record'
 
-
 # Define path
 OUTPUT_PATH = 'data/records.json'
 
+# Define headers for API if needed
+headers = dict()
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+if GITHUB_TOKEN is not None:
+    print('Token found, will save in headers')
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+    } 
 
 # Functions
 def request(url_stem, url_leaf, tolerate=False, return_json=True):
     url = f'{API_URL}/{url_stem}/{GITHUB_USERNAME}/{url_leaf}'
-    r = requests.get(url)
+    r = requests.get(url, headers=headers)
     success = r.status_code == 200
     if success:
         if return_json:
@@ -29,9 +38,10 @@ def request(url_stem, url_leaf, tolerate=False, return_json=True):
         return r.content
 
     if tolerate:
-        return {}
+        warnings.warn(f'Did not get success request at {url}')
+        return dict()
     else:
-        raise ValueError(r'Error at {url}')
+        raise ValueError(f'Error at {url}')
 
 def decode_content(d, k='content'):
     return base64.b64decode(d[k]).decode("utf-8")
