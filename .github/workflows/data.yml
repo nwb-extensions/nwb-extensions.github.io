@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        token: ${{ secrets.NWB_EXTENSIONS_BOT_GITHUB_TOKEN }}
         persist-credentials: true
     - uses: actions/setup-python@v5
       with:
