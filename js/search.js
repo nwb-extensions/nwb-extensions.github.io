@@ -83,7 +83,6 @@ excluded_in_search: true
           "<details><div class='readme-preview'><p>" + readmeHtml + "</p></div></details></li>";
         return resultHtml;
       }
-https://img.shields.io/pypi/v/ndx-odor-metadata?label=pypi%20package&style=flat-square&color=blue)](https://pypi.org/pypi/ndx-odor-metadata)
     function displaySearchResults(results, query) {
         var searchResultsEl = document.getElementById("search-results");
         var searchProcessEl = document.getElementById("search-process");
