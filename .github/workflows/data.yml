@@ -1,0 +1,52 @@
+name: Download records & Push to repository
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    # Run at 8:00 on working days
+    - cron: 0 8 * * 0-5
+  workflow_dispatch:
+
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.event.head_commit.message, '[bot]') }}
+    environment:
+      name: download-data
+    env:
+      CI_COMMIT_USER: 'github-actions[bot]'
+      CI_COMMIT_EMAIL: 'github-actions[bot]@users.noreply.github.com'
+      CI_COMMIT_MESSAGE: '[bot] update records'
+      CI_PUSH_REMOTE: git@github.com:$GITHUB_REPOSITORY.git
+      CI_PUSH_BRANCH: 'main'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.NWB_EXTENSIONS_BOT_GITHUB_TOKEN }}
+        persist-credentials: true
+    - uses: actions/setup-python@v5
+      with:
+          python-version: '3.12'
+          cache: 'pip'
+    - run: |
+        pip install -r utils/requirements.txt
+    - name: Download records data
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # in future, consider replace with PAT
+      run: |
+        python utils/collect-records.py
+    - name: Commit & Push to repository
+      run: |
+        git config user.name "${{ env.CI_COMMIT_USER }}"
+        git config user.mail "${{ env.CI_COMMIT_EMAIL }}"
+
+        if [[ `git diff data` ]] ; then
+          git add data
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push "${{ env.CI_PUSH_REMOTE }}" "HEAD:${{ env.CI_PUSH_BRANCH }}"
+        else
+          echo "No changes were found in data"
+          exit 0
+        fi

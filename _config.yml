@@ -10,11 +10,16 @@ title: Neuro Data Extensions (NDX) Catalog
 email: oruebel@lbl.gov
 description: > # this means to ignore newlines until "baseurl:"
   Web page for technical content for HDMF
-exclude: ["README.md", "Gemfile" ]
+
 url: ""
 
 include:
   - _pages
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - utils
+  - .github
 
 sass:
   sass_dir: _sass

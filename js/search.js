@@ -75,14 +75,14 @@ excluded_in_search: true
           "<p>" +
           "<span class='ndx-stats'>Version: " + item.version + "</span>" +
           "<span class='ndx-stats'><a href=\"" + item.pip + "\">PyPI project page</a></span>" +
+        //   "<span class='ndx-stats'><img alt='" + item.name + "' on PyPi' src='" + item.pypi_version_badge + "'></img></span>" +
           "<span class='ndx-stats'><a href=\"" + item.record_url + "\">Record repo</a></span>" +
           "<span class='ndx-stats'>License: " + item.license + "</span>" +
           "</p>" +
           "<p>Maintainers: " + maintainers + "</p>" +
-          "<div class='readme-preview'><p>" + readmeHtml + "</p></div></li>";
+          "<details><div class='readme-preview'><p>" + readmeHtml + "</p></div></details></li>";
         return resultHtml;
       }
-
     function displaySearchResults(results, query) {
         var searchResultsEl = document.getElementById("search-results");
         var searchProcessEl = document.getElementById("search-process");
@@ -131,5 +131,10 @@ excluded_in_search: true
     var searchQueryEl = document.getElementById("search-query");
     searchQueryEl.innerText = query;
 
-    displaySearchResults(window.index.search('*' + query + '*'), query); // Hand the results off to be displayed
+    var results = window.index.search('*' + query + '*'); // start with glob search
+    if (results.length == 0) { // use fuzzy if can't find
+        var idx_query = (!query) ? '*' : (query + '~1'); // fuzzy match, edit distance = 1
+        results = window.index.search(idx_query);
+    }
+    displaySearchResults(results, query); // Hand the results off to be displayed
 })();
