@@ -19,8 +19,6 @@ jobs:
       CI_COMMIT_USER: 'github-actions[bot]'
       CI_COMMIT_EMAIL: 'github-actions[bot]@users.noreply.github.com'
       CI_COMMIT_MESSAGE: '[bot] update records'
-      CI_PUSH_REMOTE: git@github.com:$GITHUB_REPOSITORY.git
-      CI_PUSH_BRANCH: 'main'
     steps:
     - uses: actions/checkout@v4
       with:
@@ -40,12 +38,12 @@ jobs:
     - name: Commit & Push to repository
       run: |
         git config user.name "${{ env.CI_COMMIT_USER }}"
-        git config user.mail "${{ env.CI_COMMIT_EMAIL }}"
+        git config user.email "${{ env.CI_COMMIT_EMAIL }}"
 
         if [[ `git diff data` ]] ; then
           git add data
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-          git push "${{ env.CI_PUSH_REMOTE }}" "HEAD:${{ env.CI_PUSH_BRANCH }}"
+          git push
         else
           echo "No changes were found in data"
           exit 0
