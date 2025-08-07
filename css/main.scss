@@ -211,7 +211,7 @@ table {
 
 .readme-preview {
   height: 300px; /* Adjust this value to your desired height */
-  overflow-y: hidden; /* change to scroll to enable scrolling */
+  overflow-y: scroll; /* change to scroll to enable scrolling */
   position: relative;
   padding-right: 20px;
 }
